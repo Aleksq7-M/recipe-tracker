@@ -57,7 +57,7 @@ function RecipePage ({recipes}) {
         <List>
             <p>Ingredients:</p>
             <ul>
-                {ingredients.map(ingredient => <li>{ingredient.split('-').join(' ')}</li>)}
+                {ingredients.map(ingredient => <li>{ingredient.split('-').filter(str => str !== '_').join(' ')}</li>)}
             </ul>
         </List>
         <List>

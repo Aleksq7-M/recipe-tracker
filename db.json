@@ -43,9 +43,9 @@
       "time": 25,
       "category": "Snack",
       "ingredients": [
-        "1/3 lbs Fresh Brussels Sprouts",
-        "3 tbsp Salted Butter",
-        "Salt and Pepper, to taste"
+        "1/3-lbs-Fresh Brussels Sprouts",
+        "3-tbsp-Salted Butter",
+        "_-_-Salt and Pepper to Taste"
       ],
       "steps": [
         "Wash Brussels Sprouts, and prepare by cutting off the stems of and halving each sprout.",
@@ -55,6 +55,28 @@
         "Season to taste and serve!"
       ],
       "id": 3
+    },
+    {
+      "name": "Macaroni and Cheese",
+      "image": "https://www.lovelesscafe.com/wp-content/uploads/2019/11/mac-n-cheese-recipes.jpg",
+      "time": 20,
+      "category": "Snack",
+      "ingredients": [
+        "1-lbs-Macaroni Noodles",
+        "1/2-lbs-Cheddar",
+        "1-cups-Flour",
+        "8-cups-Milk",
+        "1/2-lbs-Shredded Mozzarella"
+      ],
+      "steps": [
+        "In a pot over medium-low heat, melt butter.",
+        "Slowly, add flour to butter to create a roux.",
+        "Once roux is set up, slowly add all milk.",
+        "Add cheese to milk and simmer until desired thickness is achieved.",
+        "Cook noodles in highly salted water.",
+        "Pour sauce over noodles and serve!"
+      ],
+      "id": 4
     }
   ]
 }

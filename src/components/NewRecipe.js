@@ -55,7 +55,7 @@ const AddButton = styled.button`
     height: 29px;
     width: 18%;
     font-size: 17px;
-
+    margin-top: 3px;
     &:hover{
         cursor: pointer;
     }
@@ -82,7 +82,7 @@ function NewRecipe ({onRecipeSubmit}) {
     const [category, setCategory] = useState('Category')
     const [ingredients, setIngredients] = useState([
         {id:1,
-        value:''},
+        value:'_-_-_'},
 
     ])
     const [steps, setSteps] = useState([
@@ -96,7 +96,7 @@ function NewRecipe ({onRecipeSubmit}) {
         setIngredients([
             ...ingredients,
             {id:ingredients.at(-1).id + 1,
-            value:''}
+            value:'-_-_'}
         ])
     }
 

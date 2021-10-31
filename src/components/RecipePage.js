@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 
 import styled from 'styled-components';
 
@@ -13,6 +13,10 @@ const EscapeButton = styled.button`
     margin-left: 10px;
     height: 29px;
     color: black;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Page = styled.div`
@@ -38,12 +42,13 @@ const Image = styled.img`
 `;
 
 function RecipePage ({recipes}) {
+    const history = useHistory()
     const params = useParams();
     const recipe = recipes[params.recipeId - 1];
     const {name, image, category, time, ingredients, steps} = recipe;
     return(<>
     <Bar>    
-        <EscapeButton>{'<-'}<Link to='/'> Back to Home</Link></EscapeButton><br/>
+        <EscapeButton onClick={() => history.push('/')}>{'< Back to Home'}</EscapeButton><br/>
     </Bar>
     <Page className='RecipePage'>
         <h1>{name}</h1>

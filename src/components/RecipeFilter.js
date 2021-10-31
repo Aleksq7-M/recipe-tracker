@@ -23,10 +23,18 @@ const Input = styled.input`
 
 const Select = styled.select`
     height: 29px;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Button = styled.button`
     height: 29px;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 function RecipeFilter ({filterState, onFilterChange}) {

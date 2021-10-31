@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import NewIngredient from './NewIngredient';
 import NewStep from './NewStep';
 import styled from 'styled-components';
@@ -14,6 +14,10 @@ const EscapeButton = styled.button`
     margin-left: 10px;
     height: 29px;
     color: black;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Page = styled.div`
@@ -42,12 +46,19 @@ const InputSelect = styled.select`
     text-align: center;
     font-size: 17px;
 
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const AddButton = styled.button`
     height: 29px;
     width: 18%;
     font-size: 17px;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const SubmitButton = styled.button`
@@ -55,6 +66,11 @@ const SubmitButton = styled.button`
     width: 20%;
     margin-left: 40%;
     margin-right: 40%;
+    font-size: 19px;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 
@@ -148,7 +164,7 @@ function NewRecipe ({onRecipeSubmit}) {
 
     return(<>
         <Bar>    
-            <EscapeButton>{'<-'}<Link to='/'> Back to Home</Link></EscapeButton><br/>
+            <EscapeButton onClick={() => history.push('/')}>{'< Back to Home'}</EscapeButton><br/>
         </Bar>
         <Page className='NewRecipe'>
             <form>
@@ -193,7 +209,7 @@ function NewRecipe ({onRecipeSubmit}) {
                 >New Step</AddButton><br/>
             </form>
         </Page>
-        <SubmitButton type='submit' onClick={handleFormSubmit}>"Submit"</SubmitButton>
+        <SubmitButton type='submit' onClick={handleFormSubmit}>Submit</SubmitButton>
     </>)
 }
 

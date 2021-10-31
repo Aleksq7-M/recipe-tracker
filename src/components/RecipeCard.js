@@ -13,6 +13,10 @@ const Card = styled.div`
     border-radius: 10px;
     padding-top:0;
     background-color:white;
+
+    &:hover{
+        cursor: pointer;
+    }
 `;
 
 const Image = styled.img`

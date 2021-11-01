@@ -11,7 +11,8 @@ const Number = styled.input`
     font-size: 17px;
     height: 100%;
     width: 20%
-`
+`;
+
 const Unit = styled.select`
     font-size: 17px;
     height: 122%;
@@ -49,16 +50,6 @@ function NewIngredient ({ingredient, onIngredientChange}) {
         onIngredientChange(id, `${amt}-${unit}-${name}`)
     }, [ingredientState])
 
-    // return(<div className='NewIngredient'>
-    //     <InputField 
-    //         type='text' 
-    //         name={ingredient.id} 
-    //         placeholder={`Ingredient ${ingredient.id}`} 
-    //         value={ingredient.value}
-    //         onChange={handleChange}
-    //     ></InputField>
-    //     <br/>
-    // </div>)
      return(<InputWrapper>
         <Number 
             type='text' 

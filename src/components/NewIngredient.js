@@ -44,12 +44,12 @@ function NewIngredient ({ingredient, onIngredientChange}) {
             ...ingredientState,
             [name]: value
         })
+        onIngredientChange(id, `${amt}-${unit}-${name}`)
     }
 
-     // eslint-disable-next-line react-hooks/exhaustive-deps
-    useEffect(() => {
-        onIngredientChange(id, `${amt}-${unit}-${name}`)
-    }, [ingredientState])
+    // useEffect(() => {
+    //     onIngredientChange(id, `${amt}-${unit}-${name}`)
+    // }, [ingredientState])
 
      return(<InputWrapper>
         <Number 

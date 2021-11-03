@@ -46,6 +46,7 @@ function NewIngredient ({ingredient, onIngredientChange}) {
         })
     }
 
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         onIngredientChange(id, `${amt}-${unit}-${name}`)
     }, [ingredientState])

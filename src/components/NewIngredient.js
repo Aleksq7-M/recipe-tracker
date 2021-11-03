@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const InputWrapper = styled.div`
@@ -47,10 +47,6 @@ function NewIngredient ({ingredient, onIngredientChange}) {
         onIngredientChange(id, `${amt}-${unit}-${name}`)
     }
 
-    // useEffect(() => {
-    //     onIngredientChange(id, `${amt}-${unit}-${name}`)
-    // }, [ingredientState])
-
      return(<InputWrapper>
         <Number 
             type='text' 
@@ -77,27 +73,3 @@ function NewIngredient ({ingredient, onIngredientChange}) {
 }
 
 export default NewIngredient;
-
-/* 
-        <input 
-            type='number' 
-            name='ingAmt' 
-            placeholder='#' 
-        ></input>
-        <select name='ingUnit' >
-            <option name='unit' value='unit'>unit</option>
-            <option name='cups' value='cups'>cups</option>
-            <option name='bags' value='bags'>bags</option>
-            <option name='lbs' value='lbs'>lbs</option>
-            <option name='each' value='each'>each</option>
-        </select>
-        <input 
-            type='text' 
-            name='ingName' 
-            placeholder='Ingredient' 
-        ></input> 
-        
-        STRETCH GOAL: 
-            Implement a system in which ingredient inputs are standardized 
-            to a number, a measurement, and a name, rather than a free form string
-    */

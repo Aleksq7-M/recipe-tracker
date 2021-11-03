@@ -154,7 +154,7 @@ function NewRecipe ({onRecipeSubmit}) {
                 steps: steps.map(step => step.value)
             })
         }
-        fetch('http://localhost:4000/recipes', configObj)
+        fetch(`${process.env.REACT_APP_API_URL}/recipes`, configObj)
         .then(r => r.json())
         .then(newRecipe => {
             onRecipeSubmit(newRecipe)

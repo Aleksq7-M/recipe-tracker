@@ -57,6 +57,7 @@ function RecipeFilter ({filterState, onFilterChange}) {
                 <option name='All' value='All'>All</option>
                 <option name='Dinner' value="Dinner">Dinner</option>
                 <option name='Dessert' value="Dessert">Dessert</option>
+                <option name='Snack' value='Snack'>Snack</option>
             </Select>
         </Form>
         <Button onClick={handleNewRecipeClick}>New Recipe</Button>

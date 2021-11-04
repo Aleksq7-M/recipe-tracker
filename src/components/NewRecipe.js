@@ -148,7 +148,7 @@ function NewRecipe ({onRecipeSubmit}) {
                 image: image,
                 time: time,
                 category: category,
-                ingredients: ingredients.map(ingredient => ingredient.value),
+                ingredients: ingredients.map(ingredient => `${ingredient.amt}-${ingredient.unit}-${ingredient.name}`),
                 steps: steps.map(step => step.value)
             })
         }

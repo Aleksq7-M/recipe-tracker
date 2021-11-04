@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const InputWrapper = styled.div`
@@ -30,22 +30,8 @@ const IngredientName = styled.input`
 `;
 
 function NewIngredient ({ingredient, onIngredientChange}) {
-    const {id, value} = ingredient;
-    const [ingredientState, setIngredientState] = useState({
-        amt:value.split('-')[0],
-        unit: value.split('-')[1],
-        name:value.split('-')[2],
-    })
-    const {amt, unit, name} = ingredientState;
+    const {id, amt, unit, name} = ingredient;
 
-    function handleIngredientChange(event){
-        const {name, value} = event.target;
-        setIngredientState({
-            ...ingredientState,
-            [name]: value
-        })
-        onIngredientChange(id, `${amt}-${unit}-${name}`)
-    }
 
      return(<InputWrapper>
         <Number 
@@ -53,9 +39,9 @@ function NewIngredient ({ingredient, onIngredientChange}) {
             name='amt' 
             placeholder='#' 
             value={amt === '_' ? '' : amt}
-            onChange={handleIngredientChange}
+            onChange={(e) => onIngredientChange(e, id)}
         ></Number>
-        <Unit name='unit' value={unit === '_' ? 'unit' : unit} onChange={handleIngredientChange}>
+        <Unit name='unit' value={unit === '_' ? 'unit' : unit} onChange={(e) => onIngredientChange(e, id)}>
             <option name='unit' value='unit'>unit</option>
             <option name='cups' value='cups'>cups</option>
             <option name='bags' value='bags'>bags</option>
@@ -67,7 +53,7 @@ function NewIngredient ({ingredient, onIngredientChange}) {
             name='name' 
             placeholder='Ingredient' 
             value={name === '_' ? '' : name}
-            onChange={handleIngredientChange}
+            onChange={(e) => onIngredientChange(e, id)}
         ></IngredientName><br/>
     </InputWrapper>)
 }

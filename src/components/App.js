@@ -13,7 +13,6 @@ import NewRecipe from './NewRecipe';
     -RecipeList
       -RecipeCard (1 per recipe)
   -RecipePage
-    -(may not need any custom components)
   -NewRecipe
     -NewIngredient
     -NewStep

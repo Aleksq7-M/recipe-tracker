@@ -82,7 +82,9 @@ function NewRecipe ({onRecipeSubmit}) {
     const [category, setCategory] = useState('Category')
     const [ingredients, setIngredients] = useState([
         {id:1,
-        value:'_-_-_'},
+        amt:'_',
+        unit:'_',
+        name: '_'},
 
     ])
     const [steps, setSteps] = useState([
@@ -96,7 +98,9 @@ function NewRecipe ({onRecipeSubmit}) {
         setIngredients([
             ...ingredients,
             {id:ingredients.at(-1).id + 1,
-            value:'-_-_'}
+                amt:'_',
+                unit:'_',
+                name: '_'}
         ])
     }
 
@@ -109,16 +113,10 @@ function NewRecipe ({onRecipeSubmit}) {
         ])
     }
 
-    function handleIngredientChange(name, value){
-        const updatedIngredients = ingredients.map(ingredient =>{
-            if (ingredient.id === parseInt(name)){
-                return({
-                    ...ingredient,
-                    value: value
-                });
-            }else{
-                return ingredient;
-            }
+    function handleIngredientChange(event, id){
+        const {name, value} =  event.target;
+        const updatedIngredients = ingredients.map(ingredient => {
+            return( ingredient.id === id ? {...ingredient, [name]: value} : ingredient)
         })
         setIngredients(updatedIngredients)
     }
